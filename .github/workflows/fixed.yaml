@@ -1,12 +1,12 @@
-name: CI
+---
+name: Fixed
 
 on:
   push:
-    branches: [ "master" ]
+    branches: ["master"]
   pull_request:
-    branches: [ "master" ]
+    branches: ["master"]
   # We have 2 copies of the same item!
-  workflow_dispatch:
   workflow_dispatch:
 
 jobs:
@@ -15,12 +15,12 @@ jobs:
 
     steps:
       # Broken indentation:
-        - uses: actions/checkout@v4
+      - uses: actions/checkout@v4
       - name: Run a one-line script
         run: echo Hello, world!
 
       # Broken by having a :
-      - name: Run: A multi-line script
+      - name: "Run: A multi-line script"
         run: |
           echo Add other actions to build,
           echo test, and deploy your project.
